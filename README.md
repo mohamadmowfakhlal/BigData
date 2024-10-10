@@ -7,3 +7,20 @@ Error Exception from container-launch.\nContainer id: container_1728466507784_00
 
 
 /share/hadoop/common/*:/share/hadoop/common/lib/*:/share/hadoop/mapreduce/*:/share/hadoop/mapreduce/lib/*:/home/master/hadoop/share/hadoop/hdfs/*:/home/master/hadoop/share/hadoop/hdfs/lib/*
+
+
+<property>
+    <name>yarn.application.classpath</name>
+    <value>
+        $HADOOP_HOME/etc/hadoop:
+        $HADOOP_HOME/share/hadoop/common/*:
+        $HADOOP_HOME/share/hadoop/common/lib/*:
+        $HADOOP_HOME/share/hadoop/hdfs/*:
+        $HADOOP_HOME/share/hadoop/hdfs/lib/*:
+        $HADOOP_HOME/share/hadoop/mapreduce/*:
+        $HADOOP_HOME/share/hadoop/mapreduce/lib/*:
+        $HADOOP_HOME/share/hadoop/yarn/*:
+        $HADOOP_HOME/share/hadoop/yarn/lib/*
+    </value>
+</property>
+
