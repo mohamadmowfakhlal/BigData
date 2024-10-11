@@ -24,3 +24,6 @@ Error Exception from container-launch.\nContainer id: container_1728466507784_00
     </value>
 </property>
 
+
+
+/share/hadoop/common/*:/share/hadoop/common/lib/*:/share/hadoop/mapreduce/*:/share/hadoop/mapreduce/lib/*:/home/master/hadoop1/share/hadoop/hdfs/*:/home/master/hadoop1/share/hadoop/hdfs/lib/*
