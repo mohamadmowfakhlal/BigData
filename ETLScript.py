@@ -26,13 +26,21 @@ def get_elevation_From_API(lat,lon):
     else:
         print(f"Error: unable to ftech data")
 
-latitude = 55.021196 #34.791679, 36.679128 #55.782728, 12.478437
-longitude = 12.408768
+startinglatitude = 55.738598 #55.021196 #34.791679, 36.679128 #55.782728, 12.478437
+startinglongitude =  12.546951 #12.408768 
+#56.190924, 10.169270 skype aarhus
+endingLatitude = 56.190924
+endinglongtitude = 10.169270
+slope= (endingLatitude- startinglatitude)/((endinglongtitude - startinglongitude))
+b = startinglatitude - (slope * startinglongitude)
 count = 0
-while count < 1:
-    data = get_elevation_From_API(latitude+count,longitude+count)
+while count < 1 and startinglatitude <  endingLatitude and startinglongitude > endinglongtitude:
+    x = startinglongitude-count
+    y = (slope * x) + b
+    data = get_elevation_From_API(y,x)
     corrdinate.append(data)
     count = count + 0.001
+    startinglongitude = x
     with open("corrdinate.txt","a") as file:
         for item in data:
             file.write(str(item)+ " ")
